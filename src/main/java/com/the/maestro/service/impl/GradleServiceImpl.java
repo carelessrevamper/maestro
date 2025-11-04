@@ -2,6 +2,7 @@ package com.the.maestro.service.impl;
 
 
 import com.the.maestro.service.GradleService;
+import com.the.maestro.utils.CommonUtils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
@@ -45,8 +46,7 @@ public class GradleServiceImpl implements GradleService {
   }
 
   private boolean isWindows() {
-    logger.info("Running WhoOs: " + System.getProperty("os.name"));
-    return System.getProperty("os.name").toLowerCase().contains("win");
+    return CommonUtils.isWindows();
   }
 
 }

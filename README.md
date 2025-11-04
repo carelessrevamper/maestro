@@ -15,3 +15,12 @@ a test json for gradle api
 
 ### How to use
 
+### Project context
+#### Implemented 
+- gradle commands 
+- git commands
+- automation arounding both
+#### Future stuff
+- log reader with splunk like filter
+- tomcat REST controller
+- 
