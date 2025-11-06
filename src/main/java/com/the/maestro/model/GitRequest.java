@@ -1,13 +1,12 @@
 package com.the.maestro.model;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class GradleRequest {
+public class GitRequest {
 
-  private String repoPath;
-  private String command;
-
+  private String branch;
 }

@@ -18,8 +18,8 @@ public class ExtractTomcatProperties {
 
   public Map<String,String> getTomcatProperties() {
     Map<String, String> map = new HashMap<>();
-    map.put("path", tomcatProperties.getTomcatPath());
-    map.put("serviceName", tomcatProperties.getTomcatServiceName());
+    map.put("path", tomcatProperties.getPath());
+    map.put("serviceName", tomcatProperties.getServiceName());
     return map;
   }
 }

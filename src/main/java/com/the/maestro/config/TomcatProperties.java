@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class TomcatProperties {
 
   @Getter
-  private String tomcatServiceName;
-  private String tomcatPath;
+  private String ServiceName;
+  private String Path;
 }

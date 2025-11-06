@@ -24,45 +24,14 @@ public class TomcatServiceImpl implements TomcatService {
   @Override
   public Map<String, String> getTomcatProperties() {
     Map<String, String> map = new HashMap<>();
-    map.put("path", tomcatProperties.getTomcatPath());
-    map.put("serviceName", tomcatProperties.getTomcatServiceName());
+    map.put("path", tomcatProperties.getPath());
+    map.put("serviceName", tomcatProperties.getServiceName());
     return map;
   }
 
   @Override
-  public String stopTomcat() throws IOException, InterruptedException {
-    String serviceName = tomcatProperties.getTomcatServiceName();
-
-    if (isServiceRunning(serviceName)) {
-      Process process = new ProcessBuilder("cmd.exe", "/c", "net stop " + serviceName)
-          .inheritIO()
-          .start();
-      process.waitFor();
-    } else {
-      System.out.println("Tomcat service is already stopped.");
-    }
-    return "STOPPED";
-  }
-
-  @Override
-  public String startTomcat() throws IOException, InterruptedException {
-    String serviceName = tomcatProperties.getTomcatServiceName();
-
-    if (!isServiceRunning(serviceName)) {
-      Process process = new ProcessBuilder("cmd.exe", "/c", "net start " + serviceName)
-          .inheritIO()
-          .start();
-      process.waitFor();
-    } else {
-      System.out.println("Tomcat service is already running.");
-    }
-  return "STARTED";
-  }
-
-  /**
-   * Check if the Windows service is running
-   */
-  private boolean isServiceRunning(String serviceName) throws IOException {
+  public boolean isServiceRunning() throws IOException {
+    String serviceName = tomcatProperties.getServiceName();
     Process process = new ProcessBuilder("cmd.exe", "/c", "sc query \"" + serviceName + "\"").start();
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
       String line;
@@ -73,5 +42,31 @@ public class TomcatServiceImpl implements TomcatService {
       }
     }
     return false;
+  }
+
+  @Override
+  public String startTomcat() throws IOException, InterruptedException {
+    if (isServiceRunning()) {
+      return "Tomcat service is already running.";
+    }
+    String serviceName = tomcatProperties.getServiceName();
+    Process process = new ProcessBuilder("cmd.exe", "/c", "net start " + serviceName)
+        .inheritIO()
+        .start();
+    process.waitFor();
+    return "Tomcat service started successfully.";
+  }
+
+  @Override
+  public String stopTomcat() throws IOException, InterruptedException {
+    if (!isServiceRunning()) {
+      return "Tomcat service is already stopped.";
+    }
+    String serviceName = tomcatProperties.getServiceName();
+    Process process = new ProcessBuilder("cmd.exe", "/c", "net stop " + serviceName)
+        .inheritIO()
+        .start();
+    process.waitFor();
+    return "Tomcat service stopped successfully.";
   }
 }

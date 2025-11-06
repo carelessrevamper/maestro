@@ -2,6 +2,7 @@ package com.the.maestro.controller;
 
 
 import com.the.maestro.AppLogger;
+import com.the.maestro.model.GitRequest;
 import com.the.maestro.service.GitUpdaterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -12,6 +13,7 @@ import java.util.logging.Logger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,6 +55,16 @@ public class GitUpdateController {
 
     logger.info("init using the api");
     return gitUpdaterService.updateRepo(gitDir, username, token);
+  }
 
+  @PostMapping("/gitbranch")
+  public ResponseEntity<Map<String, String>> updateBranch(
+      @RequestParam(required = false)   String localGitDir,
+      @RequestParam(required = false) String username,
+      @RequestParam(required = false) String token,
+      @RequestBody GitRequest request)throws IOException {
+
+    logger.info("init using the api");
+    return gitUpdaterService.gitWithGivenBranch(localGitDir, username, token, request.getBranch());
   }
 }

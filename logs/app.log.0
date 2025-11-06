@@ -20,3 +20,215 @@ Oct 24, 2025 11:16:34 PM com.the.maestro.controller.GitUpdateController updateRe
 INFO: init using the api
 Oct 24, 2025 11:16:34 PM com.the.maestro.controller.GitUpdateController updateRepositories
 INFO: init using the api
+Nov 04, 2025 12:50:10 PM com.the.maestro.controller.GitUpdateController updateRepositories
+INFO: init using the api
+Nov 04, 2025 12:50:10 PM com.the.maestro.controller.GitUpdateController updateRepositories
+INFO: init using the api
+Nov 04, 2025 12:50:10 PM com.the.maestro.controller.GitUpdateController updateRepositories
+INFO: init using the api
+Nov 04, 2025 1:25:21 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 1:26:00 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 1:27:39 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 1:30:36 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 1:31:01 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 1:33:37 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Nov 04, 2025 2:43:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 04, 2025 2:47:29 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 04, 2025 3:00:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 04, 2025 3:08:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 04, 2025 3:20:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 04, 2025 10:26:01 PM org.apache.coyote.http11.Http11Processor service
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the HTTP protocol [RTSP/1.00x0d0x0a0x0d0x0a...]
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:554)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Nov 05, 2025 9:59:35 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 05, 2025 10:01:15 AM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 10:01:15 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet [dispatcherServlet] in context with path [/maestro] threw exception [Request processing failed: java.nio.file.InvalidPathException: Illegal char <:> at index 25: D:\Projects\gitProjects\D:\\Projects\\gitProjects\\consumer] with root cause
+java.nio.file.InvalidPathException: Illegal char <:> at index 25: D:\Projects\gitProjects\D:\\Projects\\gitProjects\\consumer
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at com.the.maestro.service.impl.GitUpdaterServiceImpl.walkFolders(GitUpdaterServiceImpl.java:88)
+	at com.the.maestro.service.impl.GitUpdaterServiceImpl.gitWithGivenBranch(GitUpdaterServiceImpl.java:64)
+	at com.the.maestro.controller.GitUpdateController.updateBranch(GitUpdateController.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Nov 05, 2025 10:02:48 AM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 10:02:49 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$1
+INFO: Git repository found at D:\Projects\gitProjects\consumer
+Nov 05, 2025 10:03:15 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$1
+SEVERE: Failed to update D:\Projects\gitProjects\consumer: Branch name <null> is not allowed
+Nov 05, 2025 10:03:15 AM com.the.maestro.service.impl.GitUpdaterServiceImpl renderResponse
+INFO: Building a success response
+Nov 05, 2025 10:04:11 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 05, 2025 10:04:21 AM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 10:04:22 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$1
+INFO: Git repository found at D:\Projects\gitProjects\consumer
+Nov 05, 2025 10:04:28 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$1
+WARNING: Branch '701845' not found locally in D:\Projects\gitProjects\consumer.
+Nov 05, 2025 10:04:33 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$1
+SEVERE: Failed to update D:\Projects\gitProjects\consumer: Remote origin did not advertise Ref for branch 701845. This Ref may not exist in the remote or may be hidden by permission settings.
+Nov 05, 2025 10:04:33 AM com.the.maestro.service.impl.GitUpdaterServiceImpl renderResponse
+INFO: Building a success response
+Nov 05, 2025 11:52:43 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 05, 2025 11:53:00 AM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 11:53:01 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+INFO: Git repo found at D:\Projects\gitProjects\consumer
+Nov 05, 2025 11:53:26 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+SEVERE: Failed to update D:\Projects\gitProjects\consumer: https://tfs.pacific.costcotravel.com/tfs/CostcoTravel/Work%20Items/_git/consumer: Authentication is required but no CredentialsProvider has been registered
+Nov 05, 2025 11:53:26 AM com.the.maestro.service.impl.GitUpdaterServiceImpl renderResponse
+INFO: Building a success response
+Nov 05, 2025 11:57:03 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 05, 2025 11:57:12 AM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 11:57:12 AM com.the.maestro.service.impl.GitUpdaterServiceImpl gitWithGivenBranch
+INFO: AAAA 701845
+Nov 05, 2025 11:57:13 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+INFO: Git repo found at D:\Projects\gitProjects\consumer
+Nov 05, 2025 11:57:17 AM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+SEVERE: Failed to update D:\Projects\gitProjects\consumer: https://tfs.pacific.costcotravel.com/tfs/CostcoTravel/Work%20Items/_git/consumer: Authentication is required but no CredentialsProvider has been registered
+Nov 05, 2025 11:57:17 AM com.the.maestro.service.impl.GitUpdaterServiceImpl renderResponse
+INFO: Building a success response
+Nov 05, 2025 12:01:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring DispatcherServlet 'dispatcherServlet'
+Nov 05, 2025 12:01:23 PM com.the.maestro.controller.GitUpdateController updateBranch
+INFO: init using the api
+Nov 05, 2025 12:01:23 PM com.the.maestro.service.impl.GitUpdaterServiceImpl gitWithGivenBranch
+INFO: AAAA 701845
+Nov 05, 2025 12:01:24 PM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+INFO: Git repo found at D:\Projects\gitProjects\consumer
+Nov 05, 2025 12:01:35 PM com.the.maestro.service.impl.GitUpdaterServiceImpl lambda$walkFolders$2
+INFO: Branch 'users/aviad.papo/701845' updated successfully in D:\Projects\gitProjects\consumer
+Nov 05, 2025 12:01:35 PM com.the.maestro.service.impl.GitUpdaterServiceImpl renderResponse
+INFO: Building a success response
+Nov 05, 2025 10:25:54 PM org.apache.coyote.http11.Http11Processor service
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the HTTP protocol [RTSP/1.00x0d0x0a0x0d0x0a...]
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:554)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Nov 05, 2025 11:45:49 PM org.apache.coyote.http11.Http11Processor service
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03@0xcc0x850xcb0x0d0xde0xdf0xe5$0x82*0x820xc00xb1;W?C0xcazkJ0x84085[0xaf0xe00x130xa30xa0 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Nov 05, 2025 11:46:21 PM org.apache.coyote.http11.Http11Processor service
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target [..\..\..\..\..\..\..\..\..\..\windows\win.ini ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:486)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
